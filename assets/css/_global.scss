@@ -1,0 +1,145 @@
+@font-face {
+    font-family: "lama";
+    src: url('../fonts/lama/LamaSans-Medium.woff2');
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "lama";
+    src: url('../fonts/lama/LamaSans-Regular.woff2');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "lama";
+    src: url('../fonts/lama/LamaSans-Bold.woff2');
+    font-weight: 900;
+}
+
+* {
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: "lama" , sans-serif ;
+    scroll-behavior: smooth;
+
+    &::selection{
+        background-color: #7E94CB;
+        color: #fff; 
+    }
+    
+    &::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: #1E293E;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+        background: linear-gradient(180deg, #7E94CB, #1E293E); 
+        border-radius: 8px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background: linear-gradient(180deg, #1E293E, #7E94CB); 
+    }
+}
+
+.overflowNone{
+    overflow: hidden;
+}
+
+.btn:focus,
+button:focus,
+input:focus,
+.form-control:focus {
+    outline-width: 0px !important;
+    outline-color: transparent !important;
+    box-shadow: 0 0 0 0 rgba($color: #000000, $alpha: 0);
+}
+
+a {
+    text-decoration: none !important;
+}
+
+ul{
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+.owl-theme .owl-dots .owl-dot span{
+    width: 30px;
+    height: 4px;
+    border-radius: 10px;
+    background-color: #D9D9D9;
+    opacity: 1 !important;
+    transition: all .5s linear;
+}
+
+.owl-theme .owl-dots .owl-dot.active span,
+.owl-theme .owl-dots .owl-dot:hover span{
+    background-color: #7E94CB !important;
+    opacity: 1;
+}
+
+.owl-nav {
+    margin: 0px !important;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+.owl-carousel .owl-nav button.owl-next, .owl-carousel .owl-nav button.owl-prev {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    position: relative;
+    z-index: 9;
+    border-radius: 10px;
+    overflow: hidden;
+
+    &::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 0%;
+        top: 0;
+        left: 0;
+        z-index: -2;
+        transition: all .3s linear;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        background: url('../images/arrow-right.svg') center / contain no-repeat;
+        top: calc(50% - 12px);
+        left: calc(50% - 12px);
+        z-index: -1;
+    }
+
+    span {
+        color: transparent !important;
+    }
+
+    &:hover {
+        &::before {
+            height: 100%;
+        }
+    }
+}
+
+.owl-carousel .owl-nav button.owl-next::after {
+    transform: rotate(180deg) !important;
+}
+
+.overflowNone{
+    overflow: hidden;
+}
