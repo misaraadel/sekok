@@ -2976,7 +2976,7 @@ footer .copyrights .company:hover span {
   header .arrow-shape {
     left: 50px;
     bottom: 40px;
-    z-index: 9999 !important;
+    z-index: 9995 !important;
   }
   .fixed-btn {
     bottom: 10px;
