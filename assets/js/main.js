@@ -20,6 +20,16 @@ $(document).ready(function () {
         }, 100);
     });
 
+    //Wow intit
+    wow = new WOW({
+        boxClass: 'wow',
+        animateClass: 'animated',
+        offset: 200,
+        mobile: true,
+        live: false
+    });
+    wow.init();
+
     $('.nav-button').click(function(){
         $('.nav-button').toggleClass('active');
         $('.side-nav').toggleClass('active-nav');
@@ -45,8 +55,8 @@ $(document).ready(function () {
         nav:false,
         dots: true,
         autoplay: true,
-        touchDrag  :false,
-		mouseDrag  : false,
+        touchDrag: true,
+		mouseDrag: true,
 		autoWidth: false,
 		animateOut: 'fadeOut',
         animateIn: 'fadeIn',
