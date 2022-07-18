@@ -1364,13 +1364,102 @@ html[dir="ltr"] .side-nav .navbar-nav {
 }
 
 html[dir="ltr"] .side-nav .navbar-nav .close-nav {
-  right: unset !important;
-  left: 10px;
+  left: unset !important;
+  right: 10px;
 }
 
 html[dir="ltr"] .side-nav.active-nav .navbar-nav {
   left: 0px !important;
   right: unset !important;
+}
+
+html[dir="ltr"] header {
+  background-position: top right !important;
+}
+
+html[dir="ltr"] header .owl-stage .content {
+  margin-right: auto !important;
+}
+
+html[dir="ltr"] header .owl-stage .content .custom-btn {
+  margin-right: auto !important;
+  -webkit-box-orient: horizontal !important;
+  -webkit-box-direction: normal !important;
+      -ms-flex-direction: row !important;
+          flex-direction: row !important;
+}
+
+html[dir="ltr"] header .owl-stage .content .custom-btn .right-icon {
+  -webkit-margin-end: 0px;
+          margin-inline-end: 0px;
+  -webkit-margin-start: 10px;
+          margin-inline-start: 10px;
+}
+
+html[dir="ltr"] header .owl-stage .content .custom-btn:hover .right-icon {
+  -webkit-transform: translateX(-127px);
+          transform: translateX(-127px);
+}
+
+html[dir="ltr"] header .owl-theme .owl-dots {
+  -webkit-box-pack: end !important;
+      -ms-flex-pack: end !important;
+          justify-content: flex-end !important;
+}
+
+html[dir="ltr"] header .arrow-shape {
+  left: unset !important;
+  right: 100px !important;
+}
+
+html[dir="ltr"] .fixed-btn {
+  left: unset !important;
+  right: 20px !important;
+}
+
+html[dir="ltr"] .about .image-content .data {
+  right: unset !important;
+  left: 45px !important;
+}
+
+html[dir="ltr"] .about .image-content::after {
+  background: -webkit-gradient(linear, left top, right top, from(#7E94CB), to(transparent)) !important;
+  background: linear-gradient(90deg, #7E94CB, transparent) !important;
+}
+
+html[dir="ltr"] .about::after, html[dir="ltr"] .about::before {
+  -webkit-transform: scaleX(-1);
+          transform: scaleX(-1);
+}
+
+html[dir="ltr"] .activate::after, html[dir="ltr"] .activate::before,
+html[dir="ltr"] .banner .content::after,
+html[dir="ltr"] .banner .content::before {
+  -webkit-transform: scaleX(-1) !important;
+          transform: scaleX(-1) !important;
+}
+
+html[dir="ltr"] .side-nav .navbar-nav::after,
+html[dir="ltr"] .about .image-content img,
+html[dir="ltr"] .activate .image-content img {
+  -webkit-transform: scaleX(-1) !important;
+          transform: scaleX(-1) !important;
+}
+
+html[dir="ltr"] footer .content .contact li a:hover span,
+html[dir="ltr"] footer .content .flex-data .links li a:hover {
+  -webkit-transform: translateX(10px) !important;
+          transform: translateX(10px) !important;
+}
+
+html[dir="ltr"] footer .copyrights .company:hover img {
+  -webkit-transform: translateX(-10px) !important;
+          transform: translateX(-10px) !important;
+}
+
+html[dir="ltr"] .contact-us .content::after {
+  -webkit-transform: scaleX(1) !important;
+          transform: scaleX(1) !important;
 }
 
 .custom-btn {
@@ -1983,21 +2072,28 @@ header .arrow-shape:hover img {
 }
 
 .about {
-  background: url("../images/about/about_pattern.webp") top left/contain no-repeat;
   position: relative;
   z-index: 9;
 }
 
-.about::after {
+.about::after, .about::before {
   content: '';
   position: absolute;
   width: 100%;
   height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.about::after {
   background: linear-gradient(100.74deg, #7E94CB 0%, rgba(126, 148, 203, 0) 88.73%);
   opacity: .1;
   z-index: -1;
-  top: 0;
-  left: 0;
+}
+
+.about::before {
+  z-index: 0;
+  background: url("../images/about/about_pattern.webp") top left/contain no-repeat;
 }
 
 .about .image-content {
@@ -2277,20 +2373,29 @@ header .arrow-shape:hover img {
   width: 100%;
   padding: 60px;
   position: relative;
-  background: rgba(30, 41, 62, 0.06) url("../images/banner/banner.webp") top right/contain no-repeat;
+  background: rgba(30, 41, 62, 0.06);
   border-radius: 20px;
+  overflow: hidden;
   z-index: 9;
 }
 
-.banner .content::after {
+.banner .content::after, .banner .content::before {
   content: '';
   position: absolute;
   width: 100%;
   height: 100%;
-  background: url("../images/about/about_pattern.webp") top left/contain no-repeat;
   top: 0;
   left: 0;
+}
+
+.banner .content::after {
+  background: url("../images/about/about_pattern.webp") top left/contain no-repeat;
   z-index: -1;
+}
+
+.banner .content::before {
+  background: url("../images/banner/banner.webp") top right/contain no-repeat;
+  z-index: 0;
 }
 
 .banner .content .data {

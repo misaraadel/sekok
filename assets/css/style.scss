@@ -57,8 +57,8 @@ html[dir="ltr"] {
       left: -100%;
 
       .close-nav {
-        right: unset !important;
-        left: 10px;
+        left: unset !important;
+        right: 10px;
       }
     }
 
@@ -68,6 +68,86 @@ html[dir="ltr"] {
         right: unset !important;
       }
     }
+  }
+
+  header {
+    background-position: top right !important;
+
+    .owl-stage .content {
+      margin-right: auto !important;
+  
+      .custom-btn {
+        margin-right: auto !important;
+        flex-direction: row !important;
+
+        .right-icon {
+          margin-inline-end: 0px;
+          margin-inline-start: 10px;
+        }
+
+        &:hover {
+          .right-icon {
+            transform: translateX(-127px);
+          }
+        }
+      }
+    } 
+    
+    .owl-theme .owl-dots {
+      justify-content: flex-end !important;
+    }
+
+    .arrow-shape {
+      left: unset !important;
+      right: 100px !important;
+    }
+  }
+
+  .fixed-btn {
+    left: unset !important;
+    right: 20px !important;
+  }
+
+  .about {
+    .image-content {
+      .data {
+        right: unset !important;
+        left: 45px !important;
+      }
+  
+      &::after {
+        background: linear-gradient(90deg, #7E94CB, transparent) !important;
+      }
+    }
+
+    &::after, &::before {
+      transform: scaleX(-1);
+    }
+  }
+
+  .activate,
+  .banner .content {
+    &::after, &::before {
+      transform: scaleX(-1) !important;
+    }
+  }
+  .side-nav .navbar-nav::after,
+  .about .image-content img,
+  .activate .image-content img {
+    transform: scaleX(-1) !important;
+  }
+
+  footer .content .contact li a:hover span, 
+  footer .content .flex-data .links li a:hover {
+    transform: translateX(10px) !important;
+  }
+
+  footer .copyrights .company:hover img {
+    transform: translateX(-10px) !important;
+  }
+
+  .contact-us .content::after {
+    transform: scaleX(1) !important;
   }
 }
 
@@ -578,20 +658,27 @@ header {
 }
 
 .about {
-  background: url('../images/about/about_pattern.webp') top left / contain no-repeat;
   position: relative;
   z-index: 9;
 
-  &::after {
+  &::after, &::before {
     content: '';
     position: absolute;
     width: 100%;
     height: 100%;
+    top: 0;
+    left: 0;
+  }
+
+  &::after {
     background:  linear-gradient(100.74deg, #7E94CB 0%, rgba(126, 148, 203, 0) 88.73%);
     opacity: .1;
     z-index: -1;
-    top: 0;
-    left: 0;
+  }
+
+  &::before {
+    z-index: 0;
+    background: url('../images/about/about_pattern.webp') top left / contain no-repeat;
   }
 
   .image-content {
@@ -824,19 +911,28 @@ header {
     width: 100%;
     padding: 60px;
     position: relative;
-    background: rgba($color: #1E293E, $alpha: 0.06) url('../images/banner/banner.webp') top right / contain no-repeat;
+    background: rgba($color: #1E293E, $alpha: 0.06);
     border-radius: 20px;
+    overflow: hidden;
     z-index: 9;
-
-    &::after {
+    
+    &::after, &::before {
       content: '';
       position: absolute;
       width: 100%;
       height: 100%;
-      background: url('../images/about/about_pattern.webp') top left / contain no-repeat;
       top: 0;
       left: 0;
+    }
+
+    &::after {
+      background: url('../images/about/about_pattern.webp') top left / contain no-repeat;
       z-index: -1;
+    }
+
+    &::before {
+      background: url('../images/banner/banner.webp') top right / contain no-repeat;
+      z-index: 0;
     }
 
     .data {
